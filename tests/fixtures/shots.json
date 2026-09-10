@@ -1,0 +1,12 @@
+[
+  { "id": "underpower-center", "powerPercent": 60, "angleDegrees": 0, "padX": 0, "rawScore": 570, "failureType": "UNDERPOWER_HIT" },
+  { "id": "underpower-miss", "powerPercent": 60, "angleDegrees": 60, "padX": 0, "rawScore": 0, "failureType": "MISS" },
+  { "id": "high-power-miss", "powerPercent": 100, "angleDegrees": -60, "padX": 0, "rawScore": 0, "failureType": "HIGH_POWER_MISS" },
+  { "id": "near-success-priority", "powerPercent": 70, "angleDegrees": 0, "padX": 0, "rawScore": 675, "failureType": "NEAR_SUCCESS" },
+  { "id": "699-fails", "powerPercent": 72.2, "angleDegrees": 0, "padX": 0, "rawScore": 699, "failureType": "NEAR_SUCCESS" },
+  { "id": "700-succeeds", "powerPercent": 72.3, "angleDegrees": 0, "padX": 0, "rawScore": 700, "failureType": null },
+  { "id": "zero-contact", "powerPercent": 0, "angleDegrees": 0, "padX": 0, "rawScore": 0, "failureType": "UNDERPOWER_HIT" },
+  { "id": "offset-right", "powerPercent": 100, "angleDegrees": 11.309932474020213, "padX": 0.6, "rawScore": 1000, "failureType": null },
+  { "id": "offset-wrong-aim", "powerPercent": 100, "angleDegrees": 0, "padX": 0.6, "rawScore": 0, "failureType": "HIGH_POWER_MISS" },
+  { "id": "off-center", "powerPercent": 100, "angleDegrees": 0, "padX": 0.32, "rawScore": 195, "failureType": "OFF_CENTER_HIT" }
+]

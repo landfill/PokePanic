@@ -1,0 +1,571 @@
+{
+  "schemaVersion": 1,
+  "status": "planning-only",
+  "note": "제안한 나이는 모두 성인임을 확인하기 위한 초깃값. assetKeys와 beats는 제작 계획이며 파일·애니메이션이 아님. 12개 ID는 제작 후보이고 실제 동작 검수 전 수집 개수로 홍보하지 않음.",
+  "characters": [
+    {
+      "id": "iron",
+      "nameKey": "character.iron.name",
+      "nameKo": "철근 씨",
+      "age": 34,
+      "appearance": "gym-bag",
+      "personality": "hot-tempered",
+      "reactionType": "brawl",
+      "successReactionId": "bag-late-drop",
+      "dialogueKey": "character.iron.reaction",
+      "payoff": "옷깃을 들어 올림 → 먼지 구름 → 납작한 장난감 자세",
+      "status": "planned",
+      "endingIdsByFailure": {
+        "HIGH_POWER_MISS": [
+          "self-own"
+        ],
+        "MISS": [
+          "awkward-miss"
+        ],
+        "NEAR_SUCCESS": [
+          "false-relief"
+        ],
+        "UNDERPOWER_HIT": [
+          "representative-iron"
+        ],
+        "OFF_CENTER_HIT": [
+          "representative-iron"
+        ]
+      }
+    },
+    {
+      "id": "complaint",
+      "nameKey": "character.complaint.name",
+      "nameKo": "민원 여왕",
+      "age": 32,
+      "appearance": "phone",
+      "personality": "principled",
+      "reactionType": "police",
+      "successReactionId": "phone-level",
+      "dialogueKey": "character.complaint.reaction",
+      "payoff": "휴대전화 한 번 → 대기 경찰 → 소품 수갑 연행",
+      "status": "planned",
+      "endingIdsByFailure": {
+        "HIGH_POWER_MISS": [
+          "self-own"
+        ],
+        "MISS": [
+          "awkward-miss",
+          "fake-forgiveness"
+        ],
+        "NEAR_SUCCESS": [
+          "false-relief"
+        ],
+        "UNDERPOWER_HIT": [
+          "representative-complaint",
+          "fake-forgiveness"
+        ],
+        "OFF_CENTER_HIT": [
+          "representative-complaint",
+          "fake-forgiveness"
+        ]
+      }
+    },
+    {
+      "id": "manager",
+      "nameKey": "character.manager.name",
+      "nameKo": "퇴근 전 팀장",
+      "age": 47,
+      "appearance": "wrinkled-shirt",
+      "personality": "exhausted",
+      "reactionType": "intimidation",
+      "successReactionId": "watch-check",
+      "dialogueKey": "character.manager.reaction",
+      "payoff": "소매를 걷음 → 플레이어가 먼저 주저앉음",
+      "status": "planned",
+      "endingIdsByFailure": {
+        "HIGH_POWER_MISS": [
+          "self-own"
+        ],
+        "MISS": [
+          "awkward-miss"
+        ],
+        "NEAR_SUCCESS": [
+          "false-relief"
+        ],
+        "UNDERPOWER_HIT": [
+          "representative-manager"
+        ],
+        "OFF_CENTER_HIT": [
+          "representative-manager"
+        ]
+      }
+    },
+    {
+      "id": "action",
+      "nameKey": "character.action.name",
+      "nameKo": "액션 배우",
+      "age": 29,
+      "appearance": "film-badge",
+      "personality": "competitive",
+      "reactionType": "spin",
+      "successReactionId": "mat-thumbs-up",
+      "dialogueKey": "character.action.reaction",
+      "payoff": "돌아오는 장갑을 잡음 → 플레이어를 소품처럼 회전",
+      "status": "planned",
+      "endingIdsByFailure": {
+        "HIGH_POWER_MISS": [
+          "self-own"
+        ],
+        "MISS": [
+          "awkward-miss"
+        ],
+        "NEAR_SUCCESS": [
+          "false-relief"
+        ],
+        "UNDERPOWER_HIT": [
+          "representative-action"
+        ],
+        "OFF_CENTER_HIT": [
+          "representative-action"
+        ]
+      }
+    },
+    {
+      "id": "yoga",
+      "nameKey": "character.yoga.name",
+      "nameKo": "요가 고수",
+      "age": 38,
+      "appearance": "yoga-wear",
+      "personality": "calm",
+      "reactionType": "tangle",
+      "successReactionId": "balanced-collapse",
+      "dialogueKey": "character.yoga.reaction",
+      "payoff": "반동 장갑을 잡음 → 엉킨 자세로 돌려줌",
+      "status": "planned",
+      "endingIdsByFailure": {
+        "HIGH_POWER_MISS": [
+          "self-own"
+        ],
+        "MISS": [
+          "awkward-miss"
+        ],
+        "NEAR_SUCCESS": [
+          "false-relief"
+        ],
+        "UNDERPOWER_HIT": [
+          "representative-yoga"
+        ],
+        "OFF_CENTER_HIT": [
+          "representative-yoga"
+        ]
+      }
+    },
+    {
+      "id": "guard",
+      "nameKey": "character.guard.name",
+      "nameKo": "미소의 경호원",
+      "age": 36,
+      "appearance": "earpiece",
+      "personality": "composed",
+      "reactionType": "escort",
+      "successReactionId": "traffic-control",
+      "dialogueKey": "character.guard.reaction",
+      "payoff": "손짓 → 경비팀 등장 → 플레이어를 들어 안전하게 퇴장",
+      "status": "planned",
+      "endingIdsByFailure": {
+        "HIGH_POWER_MISS": [
+          "self-own"
+        ],
+        "MISS": [
+          "awkward-miss",
+          "fake-forgiveness"
+        ],
+        "NEAR_SUCCESS": [
+          "false-relief"
+        ],
+        "UNDERPOWER_HIT": [
+          "representative-guard",
+          "fake-forgiveness"
+        ],
+        "OFF_CENTER_HIT": [
+          "representative-guard",
+          "fake-forgiveness"
+        ]
+      }
+    },
+    {
+      "id": "walker",
+      "nameKey": "character.walker.name",
+      "nameKo": "산책 챔피언",
+      "age": 52,
+      "appearance": "hiking-vest",
+      "personality": "cheerful",
+      "reactionType": "back-pat",
+      "successReactionId": "workout-finish",
+      "dialogueKey": "character.walker.reaction",
+      "payoff": "격려의 등 두드림 → 플레이어만 균형 상실",
+      "status": "planned",
+      "endingIdsByFailure": {
+        "HIGH_POWER_MISS": [
+          "self-own"
+        ],
+        "MISS": [
+          "awkward-miss"
+        ],
+        "NEAR_SUCCESS": [
+          "false-relief"
+        ],
+        "UNDERPOWER_HIT": [
+          "representative-walker"
+        ],
+        "OFF_CENTER_HIT": [
+          "representative-walker"
+        ]
+      }
+    },
+    {
+      "id": "referee",
+      "nameKey": "character.referee.name",
+      "nameKo": "비밀 심판",
+      "age": 40,
+      "appearance": "whistle",
+      "personality": "strict",
+      "reactionType": "red-card",
+      "successReactionId": "inverted-scorecard",
+      "dialogueKey": "character.referee.reaction",
+      "payoff": "호루라기 → 레드카드 → 경찰 연행",
+      "status": "planned",
+      "endingIdsByFailure": {
+        "HIGH_POWER_MISS": [
+          "self-own"
+        ],
+        "MISS": [
+          "awkward-miss",
+          "fake-forgiveness"
+        ],
+        "NEAR_SUCCESS": [
+          "false-relief"
+        ],
+        "UNDERPOWER_HIT": [
+          "representative-referee",
+          "fake-forgiveness"
+        ],
+        "OFF_CENTER_HIT": [
+          "representative-referee",
+          "fake-forgiveness"
+        ]
+      }
+    }
+  ],
+  "endings": [
+    {
+      "id": "representative-iron",
+      "family": "DELAYED_NOTICE",
+      "allowedFailureTypes": [
+        "UNDERPOWER_HIT",
+        "OFF_CENTER_HIT"
+      ],
+      "characterIds": [
+        "iron"
+      ],
+      "assetKeys": [
+        "rig.adult",
+        "prop.foam-gloves",
+        "set.stage",
+        "reaction.iron"
+      ],
+      "beats": [
+        "notice",
+        "reveal",
+        "character-payoff"
+      ],
+      "keyMoment": "character-payoff",
+      "status": "planned"
+    },
+    {
+      "id": "representative-complaint",
+      "family": "DELAYED_NOTICE",
+      "allowedFailureTypes": [
+        "UNDERPOWER_HIT",
+        "OFF_CENTER_HIT"
+      ],
+      "characterIds": [
+        "complaint"
+      ],
+      "assetKeys": [
+        "rig.adult",
+        "prop.foam-gloves",
+        "set.stage",
+        "reaction.complaint"
+      ],
+      "beats": [
+        "notice",
+        "reveal",
+        "character-payoff"
+      ],
+      "keyMoment": "character-payoff",
+      "status": "planned"
+    },
+    {
+      "id": "representative-manager",
+      "family": "DELAYED_NOTICE",
+      "allowedFailureTypes": [
+        "UNDERPOWER_HIT",
+        "OFF_CENTER_HIT"
+      ],
+      "characterIds": [
+        "manager"
+      ],
+      "assetKeys": [
+        "rig.adult",
+        "prop.foam-gloves",
+        "set.stage",
+        "reaction.manager"
+      ],
+      "beats": [
+        "notice",
+        "reveal",
+        "character-payoff"
+      ],
+      "keyMoment": "character-payoff",
+      "status": "planned"
+    },
+    {
+      "id": "representative-action",
+      "family": "DELAYED_NOTICE",
+      "allowedFailureTypes": [
+        "UNDERPOWER_HIT",
+        "OFF_CENTER_HIT"
+      ],
+      "characterIds": [
+        "action"
+      ],
+      "assetKeys": [
+        "rig.adult",
+        "prop.foam-gloves",
+        "set.stage",
+        "reaction.action"
+      ],
+      "beats": [
+        "notice",
+        "reveal",
+        "character-payoff"
+      ],
+      "keyMoment": "character-payoff",
+      "status": "planned"
+    },
+    {
+      "id": "representative-yoga",
+      "family": "DELAYED_NOTICE",
+      "allowedFailureTypes": [
+        "UNDERPOWER_HIT",
+        "OFF_CENTER_HIT"
+      ],
+      "characterIds": [
+        "yoga"
+      ],
+      "assetKeys": [
+        "rig.adult",
+        "prop.foam-gloves",
+        "set.stage",
+        "reaction.yoga"
+      ],
+      "beats": [
+        "notice",
+        "reveal",
+        "character-payoff"
+      ],
+      "keyMoment": "character-payoff",
+      "status": "planned"
+    },
+    {
+      "id": "representative-guard",
+      "family": "DELAYED_NOTICE",
+      "allowedFailureTypes": [
+        "UNDERPOWER_HIT",
+        "OFF_CENTER_HIT"
+      ],
+      "characterIds": [
+        "guard"
+      ],
+      "assetKeys": [
+        "rig.adult",
+        "prop.foam-gloves",
+        "set.stage",
+        "reaction.guard"
+      ],
+      "beats": [
+        "notice",
+        "reveal",
+        "character-payoff"
+      ],
+      "keyMoment": "character-payoff",
+      "status": "planned"
+    },
+    {
+      "id": "representative-walker",
+      "family": "DELAYED_NOTICE",
+      "allowedFailureTypes": [
+        "UNDERPOWER_HIT",
+        "OFF_CENTER_HIT"
+      ],
+      "characterIds": [
+        "walker"
+      ],
+      "assetKeys": [
+        "rig.adult",
+        "prop.foam-gloves",
+        "set.stage",
+        "reaction.walker"
+      ],
+      "beats": [
+        "notice",
+        "reveal",
+        "character-payoff"
+      ],
+      "keyMoment": "character-payoff",
+      "status": "planned"
+    },
+    {
+      "id": "representative-referee",
+      "family": "DELAYED_NOTICE",
+      "allowedFailureTypes": [
+        "UNDERPOWER_HIT",
+        "OFF_CENTER_HIT"
+      ],
+      "characterIds": [
+        "referee"
+      ],
+      "assetKeys": [
+        "rig.adult",
+        "prop.foam-gloves",
+        "set.stage",
+        "reaction.referee"
+      ],
+      "beats": [
+        "notice",
+        "reveal",
+        "character-payoff"
+      ],
+      "keyMoment": "character-payoff",
+      "status": "planned"
+    },
+    {
+      "id": "false-relief",
+      "family": "FALSE_RELIEF",
+      "allowedFailureTypes": [
+        "NEAR_SUCCESS"
+      ],
+      "characterIds": [
+        "iron",
+        "complaint",
+        "manager",
+        "action",
+        "yoga",
+        "guard",
+        "walker",
+        "referee"
+      ],
+      "assetKeys": [
+        "rig.adult",
+        "prop.foam-gloves",
+        "set.stage",
+        "module.false-relief"
+      ],
+      "beats": [
+        "knees-bend",
+        "early-celebration",
+        "stands-again",
+        "character-payoff"
+      ],
+      "keyMoment": "character-payoff",
+      "status": "planned"
+    },
+    {
+      "id": "self-own",
+      "family": "SELF_OWN",
+      "allowedFailureTypes": [
+        "HIGH_POWER_MISS"
+      ],
+      "characterIds": [
+        "iron",
+        "complaint",
+        "manager",
+        "action",
+        "yoga",
+        "guard",
+        "walker",
+        "referee"
+      ],
+      "assetKeys": [
+        "rig.adult",
+        "prop.foam-gloves",
+        "set.stage",
+        "module.self-own"
+      ],
+      "beats": [
+        "miss",
+        "recoil-spin",
+        "mat-landing",
+        "unharmed-opponent"
+      ],
+      "keyMoment": "unharmed-opponent",
+      "status": "planned"
+    },
+    {
+      "id": "awkward-miss",
+      "family": "AWKWARD_MISS",
+      "allowedFailureTypes": [
+        "MISS"
+      ],
+      "characterIds": [
+        "iron",
+        "complaint",
+        "manager",
+        "action",
+        "yoga",
+        "guard",
+        "walker",
+        "referee"
+      ],
+      "assetKeys": [
+        "rig.adult",
+        "prop.foam-gloves",
+        "set.stage",
+        "module.awkward-miss"
+      ],
+      "beats": [
+        "miss",
+        "hide-gloves",
+        "squeak",
+        "awkward-exit"
+      ],
+      "keyMoment": "awkward-exit",
+      "status": "planned"
+    },
+    {
+      "id": "fake-forgiveness",
+      "family": "FAKE_FORGIVENESS",
+      "allowedFailureTypes": [
+        "UNDERPOWER_HIT",
+        "OFF_CENTER_HIT",
+        "MISS"
+      ],
+      "characterIds": [
+        "complaint",
+        "guard",
+        "referee"
+      ],
+      "assetKeys": [
+        "rig.adult",
+        "prop.foam-gloves",
+        "set.stage",
+        "module.fake-forgiveness"
+      ],
+      "beats": [
+        "smile",
+        "relief",
+        "camera-pullback",
+        "waiting-escort"
+      ],
+      "keyMoment": "waiting-escort",
+      "status": "planned"
+    }
+  ]
+}

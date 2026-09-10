@@ -1,0 +1,29 @@
+{
+  "name": "poke-and-panic",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "똥침각 / Poke & Panic — project and verification harness",
+  "engines": { "node": "^22.18.0 || ^24.0.0" },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "npm run typecheck && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "test:e2e:install": "playwright install chromium",
+    "harness:check": "node scripts/check-project.mjs",
+    "harness:replay": "vitest run tests/unit/replay.test.ts",
+    "check": "npm run harness:check && npm run typecheck && npm test && npm run build"
+  },
+  "dependencies": { "three": "0.185.0" },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@types/three": "0.185.4",
+    "typescript": "7.0.2",
+    "vite": "8.3.0",
+    "vitest": "5.0.0"
+  }
+}
