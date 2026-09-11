@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { dirname, resolve, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -8,6 +9,13 @@ const check = (condition, message) => { if (!condition) errors.push(message); };
 const exists = path => existsSync(resolve(root, path));
 const readJson = path => JSON.parse(readFileSync(resolve(root, path), 'utf8'));
 const required = [
+  'docs/BRANCHING.md', 'docs/PLATFORMS.md', 'docs/decisions/0002-workflow-and-platforms.md',
+  '.github/pull_request_template.md', 'scripts/check-branch.mjs',
+  '.agents/skills/poke-implement/SKILL.md', '.agents/skills/poke-verify/SKILL.md',
+  '.agents/skills/poke-platform-review/SKILL.md',
+  'docs/DESIGN_WORKFLOW.md', 'docs/external-skills.json', 'docs/templates/DESIGN.md',
+  'docs/templates/ASSET.md', '.agents/skills/poke-art-ux/SKILL.md',
+  '.agents/skills/frontend-design/SKILL.md', '.agents/skills/frontend-design/LICENSE.txt',
   'README.md', 'AGENTS.md', 'ASSET_LICENSES.md', 'package.json', 'package-lock.json',
   'tsconfig.json', 'vite.config.ts', 'vitest.config.ts', 'playwright.config.ts',
   '.github/workflows/ci.yml', 'docs/README.md', 'docs/PRODUCT.md', 'docs/GAME_RULES.md',
@@ -19,6 +27,17 @@ const required = [
 for (const path of required) check(exists(path), 'Missing required file: ' + path);
 
 try {
+  const external = readJson('docs/external-skills.json');
+  check(external.schemaVersion === 1, 'Unsupported external skill schema');
+  for (const skill of external.skills) {
+    check(/^[a-f0-9]{40}$/.test(skill.commit), skill.name + ': missing pinned commit');
+    check(Object.keys(skill.files).length > 0, skill.name + ': missing file hashes');
+    for (const [path, expected] of Object.entries(skill.files)) {
+      check(exists(path), 'Missing external skill file: ' + path);
+      if (exists(path)) check(createHash('sha256').update(readFileSync(resolve(root, path))).digest('hex') === expected,
+        'External skill changed; review provenance and update manifest: ' + path);
+    }
+  }
   const matrix = readJson('docs/requirements.json');
   check(matrix.schemaVersion === 1, 'Unsupported requirement schema');
   check(exists(matrix.source), 'Missing original specification');
@@ -90,7 +109,9 @@ try {
     });
   }
   const markdown = ['README.md', 'AGENTS.md', 'ASSET_LICENSES.md'].map(p => resolve(root, p))
-    .concat(markdownFiles(resolve(root, 'docs')));
+    .concat(markdownFiles(resolve(root, 'docs')))
+    .concat(exists('.agents/skills') ? markdownFiles(resolve(root, '.agents/skills')) : [])
+    .concat(exists('.github/pull_request_template.md') ? [resolve(root, '.github/pull_request_template.md')] : []);
   for (const file of markdown.filter(file => file !== resolve(root, matrix.source))) {
     const contents = readFileSync(file, 'utf8');
     for (const match of contents.matchAll(/\[[^\]]+\]\(([^)]+)\)/g)) {
@@ -103,7 +124,7 @@ try {
   const pkg = readJson('package.json');
   const lock = readJson('package-lock.json');
   check(pkg.name === 'poke-and-panic' && pkg.private === true, 'Package identity/private setting mismatch');
-  for (const script of ['dev', 'build', 'preview', 'typecheck', 'test', 'test:e2e', 'check']) {
+  for (const script of ['dev', 'build', 'preview', 'typecheck', 'test', 'test:e2e', 'check', 'branch:check']) {
     check(Boolean(pkg.scripts[script]), 'Missing script: ' + script);
   }
   for (const category of ['dependencies', 'devDependencies']) {

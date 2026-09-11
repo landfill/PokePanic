@@ -17,6 +17,11 @@ jobs:
         with:
           node-version-file: .nvmrc
           cache: npm
+      - name: Check PR branch
+        if: github.event_name == 'pull_request'
+        env:
+          PR_HEAD_REF: ${{ github.head_ref }}
+        run: npm run branch:check
       - run: npm ci
       - run: npm run check
       - run: npx playwright install --with-deps chromium

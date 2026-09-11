@@ -61,3 +61,9 @@ Vercel: Framework Vite, Install npm ci, Build npm run build, Output dist.
 [ASSET_LICENSES.md](ASSET_LICENSES.md)에 에셋 확보·라이선스를 기록한다. 현재 외부 게임 에셋은 없다.
 단위 테스트의 판정 검증, 브라우저 smoke, 게임 완성도, 실기기 성능, 재미 검증은 각각 구분한다.
 지금 통과하는 smoke 테스트는 게임 시작→재도전의 통합 테스트가 아니다.
+
+## 구현 작업 시작
+
+현재 환경 준비는 main에서 진행한다. 실제 제품 구현 착수 시 [브랜치 전략](docs/BRANCHING.md)에 따라 분기하고 `npm run branch:check`를 실행한다.
+[AGENTS.md](AGENTS.md)의 저장소 스킬과 [플랫폼 경계](docs/PLATFORMS.md)를 확인한다.
+원격 main 보호 설정 여부와 최신 실행 결과는 STATUS에서 확인한다.

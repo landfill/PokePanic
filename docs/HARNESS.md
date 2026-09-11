@@ -77,3 +77,20 @@ Node 22는 현재 작업 환경을 유지하기 위한 선택이며 업그레이
 - [Vitest 설치](https://vitest.dev/guide/)
 - [Node.js 지원 릴리스](https://nodejs.org/en/about/previous-releases)
 - [Playwright 설치·브라우저](https://playwright.dev/docs/intro)
+
+## 구현 작업 운영
+
+[브랜치 전략](BRANCHING.md), [플랫폼 경계](PLATFORMS.md), 루트 AGENTS의 스킬 목록을 사용한다.
+작업 계약은 docs/tasks/<작업-id>.md, 검증 기록은 docs/verification/<날짜>-<작업-id>.md로 보관한다.
+짧은 작업은 STATUS와 PR에 같은 필드를 기록해도 되며 빈 기록 파일을 미리 만들지 않는다.
+
+`npm run branch:check`는 실제 구현 착수 시의 로컬 브랜치 또는 CI의 PR_HEAD_REF를 검사한다. M0 준비 중 main에서는 실행하지 않는다.
+일반 check와 분리하여 main·태그·detached checkout의 빌드를 막지 않는다.
+PR CI에서는 브랜치 검사도 필수다. 이름 검사는 원격 main 보호나 리뷰 승인을 대신하지 않는다.
+스킬 파일과 PR 양식도 harness:check의 파일·링크 검사에 포함된다.
+
+## 디자인 도구 하니스
+
+[에셋·UI·UX 제작](DESIGN_WORKFLOW.md)에 도구 상태와 제작·검수 기준이 있다.
+외부 스킬 고정 커밋·파일 해시는 external-skills.json에 기록하며 harness:check에서 검사한다.
+개발 보조 스킬의 라이선스는 게임 에셋 라이선스와 별개다.

@@ -32,3 +32,16 @@ requirements.json의 status:
 - verified: 해당 요구사항의 전체 수용 기준과 지정 환경 검증을 마쳤음.
 
 하니스 파일 존재 검사는 제품 완료 여부를 자동으로 올리지 않는다.
+
+## 후속 작업 하니스
+
+- [브랜치와 PR·릴리스](BRANCHING.md)
+- [웹 우선·앱 전환 경계](PLATFORMS.md)
+- [작업 하니스 결정](decisions/0002-workflow-and-platforms.md)
+- [저장소 스킬 진입점](../AGENTS.md)
+
+- [에셋·UI·UX 제작 하니스](DESIGN_WORKFLOW.md)
+
+- [스킬·지침 점검 결과](SKILL_AUDIT.md)
+
+- [현재 디자인 결정과 인계](DESIGN_DECISIONS.md)

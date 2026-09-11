@@ -21,3 +21,10 @@ docs/content-plan.json의 assetKeys는 제작 계획 ID이며 실제 파일 경�
 Three.js 및 개발 도구의 실제 라이선스는 각 설치 패키지의 LICENSE/라이선스 메타데이터를 따른다.
 게임 에셋 권리와 npm 소프트웨어 라이선스를 혼동하지 않는다.
 제품 배포 전 번들에 포함한 라이브러리의 고지 의무를 함께 확인한다.
+
+## 외부 개발 스킬 고지
+
+frontend-design은 Anthropic 공식 skills 저장소의 Apache-2.0 배포본이다.
+원문 고지는 [.agents/skills/frontend-design/LICENSE.txt](.agents/skills/frontend-design/LICENSE.txt)에 보존한다.
+고정 커밋·파일 해시는 [external-skills.json](docs/external-skills.json)에 있다.
+개발 스킬을 설치한 것이 게임용 이미지·모델·폰트를 확보했다는 뜻은 아니다.
