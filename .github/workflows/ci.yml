@@ -26,6 +26,7 @@ jobs:
       - run: npm run check
       - run: npx playwright install --with-deps chromium
       - run: npm run test:e2e
+      - run: npm run test:input-browser
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
@@ -33,4 +34,5 @@ jobs:
           path: |
             playwright-report/
             test-results/
+            artifacts/local/input-test-results/
           retention-days: 7

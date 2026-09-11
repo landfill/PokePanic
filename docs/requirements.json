@@ -14,9 +14,12 @@
       "acceptance": "똥침각 / Poke & Panic과 성인 쇼 안내를 표시; 금지 표현 없음",
       "milestone": "M1",
       "verification": "manual",
-      "status": "planned",
-      "evidence": [],
-      "remaining": "시작·공개·결말 화면 검수"
+      "status": "implemented",
+      "evidence": [
+        "src/i18n/messages.ts",
+        "tests/e2e/readiness.spec.ts"
+      ],
+      "remaining": "시작 이름·성인 배우 안내 구현. 전체 8인물 표현 최종 검수는 남음."
     },
     {
       "id": "R-LOOP",
@@ -31,9 +34,14 @@
       "acceptance": "성공 다음 상대, 실패 본편 후 게임오버, 한 번 재도전; 런만 초기화",
       "milestone": "M1",
       "verification": "e2e",
-      "status": "planned",
-      "evidence": [],
-      "remaining": "성공/실패/재도전 상태 통합"
+      "status": "implemented",
+      "evidence": [
+        "tests/unit/run.test.ts",
+        "tests/unit/session.test.ts",
+        "tests/input-e2e/input.spec.ts",
+        "tests/e2e/readiness.spec.ts"
+      ],
+      "remaining": "대표 두 인물 런 연결. 실제 원인별 본편·전체 제품 검수는 미완료."
     },
     {
       "id": "R-INPUT",
@@ -47,9 +55,14 @@
       "acceptance": "pointer/keyboard 해제 후 두 번째 새 입력 즉시 발사; 설정 전파·repeat·멀티터치 방어",
       "milestone": "M1",
       "verification": "e2e",
-      "status": "planned",
-      "evidence": [],
-      "remaining": "Pointer Events, Space/Enter, 빠른 두 입력"
+      "status": "implemented",
+      "evidence": [
+        "tests/unit/shot-input.test.ts",
+        "tests/input-e2e/input.spec.ts",
+        "tests/unit/action-input.test.ts",
+        "tests/e2e/readiness.spec.ts"
+      ],
+      "remaining": "실제 제품·별도 fixture에서 해제·두 입력·메뉴/도감/설정 전파 검증. 실기기 입력은 미검증."
     },
     {
       "id": "R-POWER",
@@ -63,11 +76,14 @@
       "acceptance": "반올림을 포함한 최대 점수로 안내; 60%→570; 부족해도 AIM 유지",
       "milestone": "M1",
       "verification": "unit+e2e",
-      "status": "reference-tested",
+      "status": "implemented",
       "evidence": [
-        "tests/unit/scoring.test.ts"
+        "tests/unit/scoring.test.ts",
+        "tests/unit/shot-input.test.ts",
+        "tests/input-e2e/input.spec.ts",
+        "src/ui/game-ui.ts"
       ],
-      "remaining": "기준 하니스만 검증. 전체 제품 통합과 지정 환경 수용 기준은 해당 단계에서 검증."
+      "remaining": "실제 숫자·구간·최대 점수·저파워 AIM 연결. 모든 화면/언어 시각 최종 검수는 남음."
     },
     {
       "id": "R-SCORE",
@@ -80,11 +96,13 @@
       "acceptance": "d>=1은 0; 699 실패/700 성공; 0 파워 접촉 구분",
       "milestone": "M1",
       "verification": "unit",
-      "status": "reference-tested",
+      "status": "implemented",
       "evidence": [
-        "tests/unit/scoring.test.ts"
+        "tests/unit/scoring.test.ts",
+        "tests/unit/run.test.ts",
+        "tests/unit/session.test.ts"
       ],
-      "remaining": "기준 하니스만 검증. 전체 제품 통합과 지정 환경 수용 기준은 해당 단계에서 검증."
+      "remaining": "좌표 판정·불변 FIRE 입력·런 통합. 실장면 경계 재현과 실기기 검증은 미완료."
     },
     {
       "id": "R-COMBO",
@@ -97,11 +115,12 @@
       "acceptance": "성공만 점수 지급, 배수 최대 2, 배수로 승패 역전 없음; 중복 지급 없음",
       "milestone": "M1",
       "verification": "unit+integration",
-      "status": "reference-tested",
+      "status": "implemented",
       "evidence": [
-        "tests/unit/scoring.test.ts"
+        "tests/unit/scoring.test.ts",
+        "tests/unit/run.test.ts"
       ],
-      "remaining": "기준 하니스만 검증. 전체 제품 통합과 지정 환경 수용 기준은 해당 단계에서 검증."
+      "remaining": "성공 12회 배수 상한·실패 699·중복 finish 검증. 실제 연속 성공 플레이 관찰은 미완료."
     },
     {
       "id": "R-FAILURE",
@@ -114,11 +133,13 @@
       "acceptance": "5유형 순서; 675 중앙은 NEAR_SUCCESS; 성공은 실패 선택 안 함",
       "milestone": "M1",
       "verification": "unit+integration",
-      "status": "reference-tested",
+      "status": "implemented",
       "evidence": [
-        "tests/unit/scoring.test.ts"
+        "tests/unit/scoring.test.ts",
+        "tests/unit/run.test.ts",
+        "tests/unit/runtime-endings.test.ts"
       ],
-      "remaining": "기준 하니스만 검증. 전체 제품 통합과 지정 환경 수용 기준은 해당 단계에서 검증."
+      "remaining": "런 판정과 실제 결말 호환 선택 연결. 신규 6인물의 원인별 영상 검수는 남음."
     },
     {
       "id": "R-FAIRNESS",
@@ -133,9 +154,13 @@
       "acceptance": "같은 입력·배치에 같은 결과; 정체·도감·선택이 점수 변경 불가",
       "milestone": "M2",
       "verification": "integration",
-      "status": "planned",
-      "evidence": [],
-      "remaining": "8개 캐릭터·다른 프로필 결과 비교"
+      "status": "implemented",
+      "evidence": [
+        "tests/unit/run.test.ts",
+        "tests/unit/actors.test.ts",
+        "tests/unit/full-replay.test.ts"
+      ],
+      "remaining": "공통 패드·독립 판정·캡처 재현 구현. 8인물 제품 전체 교차 재현은 진행 예정."
     },
     {
       "id": "R-GEOMETRY",
@@ -149,11 +174,13 @@
       "acceptance": "좌우 월드 위치로 정답 변화; frozen 패드와 장갑 끝점 동일 경로",
       "milestone": "M1",
       "verification": "unit+visual",
-      "status": "reference-tested",
+      "status": "implemented",
       "evidence": [
-        "tests/unit/geometry.test.ts"
+        "tests/unit/geometry.test.ts",
+        "src/scene/stage.ts",
+        "tests/unit/session.test.ts"
       ],
-      "remaining": "기준 하니스만 검증. 전체 제품 통합과 지정 환경 수용 기준은 해당 단계에서 검증."
+      "remaining": "실제 패드 matrixWorld와 장갑 끝점 좌표 연결. 카메라·접점 연속 영상 정밀 검수 미완료."
     },
     {
       "id": "R-CLOCK",
@@ -167,11 +194,13 @@
       "acceptance": "동일 게임 시각의 30/60/120fps 입력 일치; 숨김·복귀 점프 없음",
       "milestone": "M1",
       "verification": "unit+e2e",
-      "status": "reference-tested",
+      "status": "implemented",
       "evidence": [
-        "tests/unit/clock.test.ts"
+        "tests/unit/clock.test.ts",
+        "tests/unit/shot-input.test.ts",
+        "tests/input-e2e/input.spec.ts"
       ],
-      "remaining": "기준 하니스만 검증. 전체 제품 통합과 지정 환경 수용 기준은 해당 단계에서 검증."
+      "remaining": "상태·입력 공통 시계 및 중지/명시적 재개 검증. 실제 화면 숨김·잠금·복귀와 연출 타임라인 연결은 미완료."
     },
     {
       "id": "R-REVEAL",
@@ -186,9 +215,13 @@
       "acceptance": "처음부터 같은 전신 모델; 공개 전 얼굴·소품·그림자 단서 없음",
       "milestone": "M1",
       "verification": "visual",
-      "status": "planned",
-      "evidence": [],
-      "remaining": "공개 전후 연속 영상"
+      "status": "implemented",
+      "evidence": [
+        "src/characters/rig.ts",
+        "src/scene/stage.ts",
+        "tests/e2e/readiness.spec.ts"
+      ],
+      "remaining": "두 전신 절차 리그와 같은 모델 회전·카메라 공개 구현. 미리 보이는 식별 단서·성인 비율·표현 품질은 계속 검수."
     },
     {
       "id": "R-CHARACTERS",
@@ -202,9 +235,12 @@
       "acceptance": "8개 성인 전신, 독립 얼굴·실루엣·소품·대표 실패·성공 반응",
       "milestone": "M3",
       "verification": "visual",
-      "status": "planned",
-      "evidence": [],
-      "remaining": "content-plan.json은 계획 무결성만 검사"
+      "status": "implemented",
+      "evidence": [
+        "src/characters/rig.ts",
+        "tests/unit/actors.test.ts"
+      ],
+      "remaining": "8 전신 리그·고유 실루엣/소품 연결 단계. 신규 6인물 세부 연출·얼굴·시각 품질 검수 미완료."
     },
     {
       "id": "R-ENDINGS",
@@ -218,9 +254,14 @@
       "acceptance": "5계열과 철근 역습·수갑 연행; 접촉/비명중 실제 장면 구분",
       "milestone": "M3",
       "verification": "integration+visual",
-      "status": "planned",
-      "evidence": [],
-      "remaining": "모든 캐릭터×실패 원인 커버리지와 영상"
+      "status": "implemented",
+      "evidence": [
+        "src/endings/runtime.ts",
+        "src/scene/reactions.ts",
+        "tests/unit/runtime-endings.test.ts",
+        "tests/input-e2e/scenes.spec.ts"
+      ],
+      "remaining": "12개 runtime 결말과 40개 호환 조합, 대표 두 인물 동작/프레임 검수. 신규 6인물 동작 보강·검수 미완료."
     },
     {
       "id": "R-SUCCESS",
@@ -234,9 +275,12 @@
       "acceptance": "정체 공개 후 균형 상실; 성공 후 반격·체포로 번복 없음",
       "milestone": "M3",
       "verification": "visual",
-      "status": "planned",
-      "evidence": [],
-      "remaining": "8종 성공·대성공 영상"
+      "status": "implemented",
+      "evidence": [
+        "src/scene/stage.ts",
+        "tests/input-e2e/scenes.spec.ts"
+      ],
+      "remaining": "대표 두 인물 균형 상실·소품 반응 구현. 신규 6인물 고유 성공 동작은 보강 필요."
     },
     {
       "id": "R-BAG",
@@ -251,9 +295,11 @@
       "acceptance": "8종 소진 전 중복 없음; 경계 연속 중복 방지; 준비 성공만 소비; 재도전·재접속 유지",
       "milestone": "M2",
       "verification": "integration",
-      "status": "planned",
-      "evidence": [],
-      "remaining": "백 경계·에셋 실패·연속 RETRY·리로드"
+      "status": "implemented",
+      "evidence": [
+        "tests/unit/character-bag.test.ts"
+      ],
+      "remaining": "범용 8종 백 단위 검증, 실제 제품은 제작된 두 인물만 사용. 실제 8종 준비·재접속 제품 검증은 미완료."
     },
     {
       "id": "R-COLLECTION",
@@ -267,9 +313,13 @@
       "acceptance": "도달 해금/핵심 장면 감상 분리; 미발견 우선은 호환 후보만; 도감은 런 불변",
       "milestone": "M2",
       "verification": "unit+e2e",
-      "status": "planned",
-      "evidence": [],
-      "remaining": "최소화·잠긴 제목·재생 종료 확인"
+      "status": "implemented",
+      "evidence": [
+        "src/ui/collection.ts",
+        "tests/unit/collection.test.ts",
+        "tests/e2e/readiness.spec.ts"
+      ],
+      "remaining": "해금/감상 분리·도감 격리 재생·런 시계 보존 검증. 8인물 전 항목 제품 검수는 남음."
     },
     {
       "id": "R-SKIP",
@@ -283,9 +333,11 @@
       "acceptance": "스킵/정상 완료로 점수·해금·다음 상대 1회; 이전 roundId 무시",
       "milestone": "M2",
       "verification": "integration",
-      "status": "planned",
-      "evidence": [],
-      "remaining": "종료 직전 스킵·더블 입력·재도전 후 콜백"
+      "status": "implemented",
+      "evidence": [
+        "tests/unit/timeline.test.ts"
+      ],
+      "remaining": "독립 타임라인 코어만 검증. 현재 제품의 기본 연출 스킵과 수집 이벤트 통합은 후속 작업."
     },
     {
       "id": "R-REPLAY",
@@ -300,11 +352,14 @@
       "acceptance": "초기 프로필/시드/배치/게임시각 입력 같으면 상대·판정·결말 동일; 이펙트로 난수 오염 없음",
       "milestone": "M2",
       "verification": "unit+integration",
-      "status": "reference-tested",
+      "status": "implemented",
       "evidence": [
-        "tests/unit/replay.test.ts"
+        "tests/unit/replay.test.ts",
+        "src/game/replay.ts",
+        "tests/unit/full-replay.test.ts",
+        "tests/unit/recorder.test.ts"
       ],
-      "remaining": "기준 하니스만 검증. 전체 제품 통합과 지정 환경 수용 기준은 해당 단계에서 검증."
+      "remaining": "실제 캡처 라운드 재현/카탈로그 호환 구현. v1은 해결된 배치·위상을 사용하며 placement/gauge 난수를 재생성하지 않음."
     },
     {
       "id": "R-I18N",
@@ -317,9 +372,12 @@
       "acceptance": "전체 문구 번역 키·저장 우선; 전환으로 런/시계/상대 유지; 영어 길이 검수",
       "milestone": "M1",
       "verification": "e2e+visual",
-      "status": "planned",
-      "evidence": [],
-      "remaining": "POWER/AIM/결말/오류에서 KO/EN"
+      "status": "implemented",
+      "evidence": [
+        "src/i18n/messages.ts",
+        "tests/e2e/readiness.spec.ts"
+      ],
+      "remaining": "현재 화면 KO/EN 연결·전환 검증. 도감·최종 결말·오류 전체 번역 검수 미완료."
     },
     {
       "id": "R-MOBILE",
@@ -332,9 +390,12 @@
       "acceptance": "360px·가로·safe-area·주소창 변화에서 패드/장갑/버튼 노출",
       "milestone": "M1",
       "verification": "e2e+device",
-      "status": "planned",
-      "evidence": [],
-      "remaining": "실기기 세로/가로 터치"
+      "status": "implemented",
+      "evidence": [
+        "src/ui/game.css",
+        "tests/e2e/readiness.spec.ts"
+      ],
+      "remaining": "360px 제품 입력·결과 패널 구현/검증. 가로 전체 화면과 실기기 검수 미완료."
     },
     {
       "id": "R-A11Y",
@@ -347,9 +408,13 @@
       "acceptance": "키보드·포커스·단계 알림·무음 피드백·움직임 감소; 오디오 거절 처리",
       "milestone": "M1",
       "verification": "e2e+manual",
-      "status": "planned",
-      "evidence": [],
-      "remaining": "키보드·스크린리더·음소거·reduce-motion"
+      "status": "implemented",
+      "evidence": [
+        "src/i18n/messages.ts",
+        "src/audio/sound.ts",
+        "tests/e2e/readiness.spec.ts"
+      ],
+      "remaining": "키보드·포커스·단계 알림·무음·움직임 감소 구현. 스크린리더와 오디오 거절 제품 검수는 남음."
     },
     {
       "id": "R-STORAGE",
@@ -363,9 +428,11 @@
       "acceptance": "버전/기본값/손상/거부 처리; 메모리 백 유지; 미래 버전 덮어쓰기 금지",
       "milestone": "M2",
       "verification": "integration",
-      "status": "planned",
-      "evidence": [],
-      "remaining": "JSON 손상·SecurityError·QuotaExceededError"
+      "status": "implemented",
+      "evidence": [
+        "tests/unit/profile.test.ts"
+      ],
+      "remaining": "프로필 정책 22개 단위 검증과 실제 localStorage 연결. 제품 장애 주입·8종 확장·도감 연결 미완료."
     },
     {
       "id": "R-RESILIENCE",
@@ -379,9 +446,11 @@
       "acceptance": "WebGL 2 실패·context loss·다운로드 실패 재시도; 무한 로딩 없음; 리소스 정리",
       "milestone": "M4",
       "verification": "e2e+manual",
-      "status": "planned",
-      "evidence": [],
-      "remaining": "장애 주입·연속 재도전 메모리 관찰"
+      "status": "implemented",
+      "evidence": [
+        "tests/e2e/resilience.spec.ts"
+      ],
+      "remaining": "저장 거부/미래 스키마·WebGL context loss 복구 검증. 에셋 준비 실패·장기 리소스·실기기 장애 검수는 남음."
     },
     {
       "id": "R-PERF",
@@ -425,11 +494,11 @@
       "acceptance": "npm ci/dev/build/preview/typecheck/test 작동; production 자산/콘솔 확인; 실배포 구분",
       "milestone": "M0",
       "verification": "automation",
-      "status": "reference-tested",
+      "status": "implemented",
       "evidence": [
         "tests/e2e/readiness.spec.ts"
       ],
-      "remaining": "기준 하니스만 검증. 전체 제품 통합과 지정 환경 수용 기준은 해당 단계에서 검증."
+      "remaining": "게임 빌드·로컬 브라우저 검증. 원격 CI·배포는 미실행."
     },
     {
       "id": "R-DEBUG",
@@ -442,9 +511,13 @@
       "acceptance": "시드/프로필/배치/입력/결말/fps; 강제 미리보기 구분; 제품 빌드에서 제거",
       "milestone": "M2",
       "verification": "e2e",
-      "status": "planned",
-      "evidence": [],
-      "remaining": "개발 패널과 production 미노출"
+      "status": "implemented",
+      "evidence": [
+        "src/debug/panel.ts",
+        "src/debug/recorder.ts",
+        "tests/unit/recorder.test.ts"
+      ],
+      "remaining": "개발 한정 JSON 기록/격리 재현/강제 연출 구분 및 dist 제외 확인. 시드 편집·fps 표시 등 상세 패널은 보완 필요."
     },
     {
       "id": "R-ASSETS",
@@ -458,9 +531,13 @@
       "acceptance": "로컬 확보·라이선스·수정·생성 소스 기록, 가짜 URL 없음",
       "milestone": "M3",
       "verification": "manual",
-      "status": "planned",
-      "evidence": [],
-      "remaining": "ASSET_LICENSES.md"
+      "status": "implemented",
+      "evidence": [
+        "ASSET_LICENSES.md",
+        "src/characters/rig.ts",
+        "src/scene/reactions.ts"
+      ],
+      "remaining": "실제 절차 생성 소스·참고 이미지 생성 기록 보존. 최종 8인물 시각/사용 조건 검수는 남음."
     }
   ]
 }

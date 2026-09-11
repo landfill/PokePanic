@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "rulesVersion": 1,
+  "randomVersion": "lcg32-v1",
+  "catalogCharacterIds": ["iron", "complaint"],
+  "initialProfile": {
+    "schemaVersion": 1,
+    "bestScore": 200,
+    "bestStreak": 0,
+    "discoveredCharacterIds": [],
+    "unlockedEndingIds": [],
+    "seenEndingIds": [],
+    "bag": {
+      "order": ["iron", "complaint"],
+      "cursor": 2,
+      "previousCharacterId": null,
+      "characterRngState": 0
+    },
+    "settings": {
+      "locale": "en",
+      "muted": false,
+      "reducedMotion": false,
+      "screenShake": true,
+      "minimizeScenes": false
+    }
+  },
+  "endingRngState": 7,
+  "rounds": [
+    {
+      "roundId": 1,
+      "prepared": {
+        "origin": [0, 0, 0],
+        "padSnapshot": {
+          "worldFromLocal": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, -3, 1],
+          "radiusX": 0.4,
+          "radiusY": 0.3
+        },
+        "powerPeriodMs": 2200,
+        "anglePeriodMs": 3000,
+        "powerPhase": 0,
+        "anglePhase": 0
+      },
+      "inputGameTimeMs": [1100, 1850],
+      "finishPolicy": "normal"
+    },
+    {
+      "roundId": 2,
+      "prepared": {
+        "origin": [0, 0, 0],
+        "padSnapshot": {
+          "worldFromLocal": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, -3, 1],
+          "radiusX": 0.4,
+          "radiusY": 0.3
+        },
+        "powerPeriodMs": 2200,
+        "anglePeriodMs": 3000,
+        "powerPhase": 0,
+        "anglePhase": 0.25
+      },
+      "inputGameTimeMs": [660, 660],
+      "finishPolicy": "minimized",
+      "retryAfter": true
+    },
+    {
+      "roundId": 3,
+      "prepared": {
+        "origin": [0, 0, 0],
+        "padSnapshot": {
+          "worldFromLocal": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, -3, 1],
+          "radiusX": 0.4,
+          "radiusY": 0.3
+        },
+        "powerPeriodMs": 2200,
+        "anglePeriodMs": 3000,
+        "powerPhase": 0.5,
+        "anglePhase": 0.25
+      },
+      "inputGameTimeMs": [0, 0],
+      "finishPolicy": "normal"
+    },
+    {
+      "roundId": 4,
+      "prepared": {
+        "origin": [0, 0, 0],
+        "padSnapshot": {
+          "worldFromLocal": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, -3, 1],
+          "radiusX": 0.4,
+          "radiusY": 0.3
+        },
+        "powerPeriodMs": 2200,
+        "anglePeriodMs": 3000,
+        "powerPhase": 0,
+        "anglePhase": 0
+      },
+      "inputGameTimeMs": [1100, 2600],
+      "finishPolicy": "skip"
+    }
+  ],
+  "expected": {
+    "rounds": [
+      {
+        "characterId": "complaint",
+        "rawScore": 1000,
+        "failureType": null,
+        "endingId": null,
+        "runId": 1,
+        "runTotal": 1000,
+        "streak": 1,
+        "bagCursor": 1,
+        "unlockedEndingIds": [],
+        "seenEndingIds": []
+      },
+      {
+        "characterId": "iron",
+        "rawScore": 570,
+        "failureType": "UNDERPOWER_HIT",
+        "endingId": "representative-iron",
+        "runId": 1,
+        "runTotal": 1000,
+        "streak": 0,
+        "bagCursor": 2,
+        "unlockedEndingIds": ["representative-iron"],
+        "seenEndingIds": []
+      },
+      {
+        "characterId": "complaint",
+        "rawScore": 1000,
+        "failureType": null,
+        "endingId": null,
+        "runId": 2,
+        "runTotal": 1000,
+        "streak": 1,
+        "bagCursor": 1,
+        "unlockedEndingIds": ["representative-iron"],
+        "seenEndingIds": []
+      },
+      {
+        "characterId": "iron",
+        "rawScore": 0,
+        "failureType": "HIGH_POWER_MISS",
+        "endingId": "self-own",
+        "runId": 2,
+        "runTotal": 1000,
+        "streak": 0,
+        "bagCursor": 2,
+        "unlockedEndingIds": ["representative-iron", "self-own"],
+        "seenEndingIds": ["self-own"]
+      }
+    ],
+    "finalProfile": {
+      "schemaVersion": 1,
+      "bestScore": 1000,
+      "bestStreak": 1,
+      "discoveredCharacterIds": ["complaint", "iron"],
+      "unlockedEndingIds": ["representative-iron", "self-own"],
+      "seenEndingIds": ["self-own"],
+      "bag": {
+        "order": ["complaint", "iron"],
+        "cursor": 2,
+        "previousCharacterId": "iron",
+        "characterRngState": 1196435762
+      },
+      "settings": {
+        "locale": "en",
+        "muted": false,
+        "reducedMotion": false,
+        "screenShake": true,
+        "minimizeScenes": false
+      }
+    },
+    "finalBag": {
+      "order": ["complaint", "iron"],
+      "cursor": 2,
+      "previousCharacterId": "iron",
+      "characterRngState": 1196435762
+    },
+    "endingRngState": 3923423697
+  }
+}
